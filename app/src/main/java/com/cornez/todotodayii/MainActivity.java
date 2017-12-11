@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     public void addTaskNow(View view) {
         String s = myTask.getText().toString();
         if (s.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "A Medication must have a name.", Toast.LENGTH_SHORT).show();
         } else {
 
             //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
@@ -71,6 +71,11 @@ public class MainActivity extends Activity {
             // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
             adapt.add(task);
             adapt.notifyDataSetChanged();
+
+            //SEND USER TOAST MESSAGE
+            Toast.makeText(getApplicationContext(), "Medication Added", Toast.LENGTH_SHORT).show();
+
+
         }
     }
 
