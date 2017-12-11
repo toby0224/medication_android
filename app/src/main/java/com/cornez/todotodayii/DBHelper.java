@@ -125,7 +125,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_DESCRIPTION, task.getDescription());
         values.put(KEY_IS_DONE, task.getIs_done());
-        db.update(DATABASE_TABLE, values, KEY_TASK_ID + " = ?", new String[]{String.valueOf(task.getId())});
+        db.update(DATABASE_TABLE, values, KEY_TASK_ID + " = ?", new String[]{String.valueOf(task.getId2())});
         db.close();
     }
 
