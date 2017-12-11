@@ -5,6 +5,20 @@
     android:orientation="vertical">
 
 
+
+
+    <TextView
+        android:id="@+id/txtCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/etMedName"
+        android:layout_marginBottom="24dp"
+        android:onClick="txtCancel"
+        android:text="Cancel"
+        android:textSize="18sp" />
+
+
     <EditText
         android:id="@+id/etMedName"
         android:layout_width="370dp"
@@ -94,14 +108,6 @@
         android:textSize="22sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignStart="@+id/etMedName"
-        android:layout_marginBottom="24dp"
-        android:text="Cancel"
-        android:textSize="18sp" />
+
 
 </RelativeLayout>

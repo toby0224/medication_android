@@ -43,12 +43,15 @@ public class MainActivity extends Activity {
 
         // TASK 3: SET UP THE DATABASE
         mDBHelper = new DBHelper(this);
+
+
         /*
         list = mDBHelper.getAllTasks();
         adapt = new MyAdapter(this, R.layout.todo_item, list);
         ListView listTask = (ListView) findViewById(R.id.listView1);
         listTask.setAdapter(adapt);
         */
+
     }
 
 
