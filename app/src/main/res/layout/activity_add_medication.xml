@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:id="@+id/etMedName"
+        android:layout_width="370dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        android:ems="10"
+        android:hint="@string/medication_name" />
+
+    <EditText
+        android:id="@+id/etFrequency"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/etMedName"
+        android:layout_below="@+id/etMedName"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="@string/frequency"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etDosage"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/etFrequency"
+        android:layout_below="@+id/etFrequency"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="@string/dosage"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/etUnits"
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/etDosage"
+        android:layout_alignBottom="@+id/etDosage"
+        android:layout_alignEnd="@+id/etMedName"
+        android:layout_marginEnd="23dp"
+        android:ems="10"
+        android:hint="@string/units"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etStartDate"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/etEndDate"
+        android:layout_alignBottom="@+id/etEndDate"
+        android:layout_alignStart="@+id/etDosage"
+        android:ems="10"
+        android:hint="@string/start_date"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/etEndDate"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/etUnits"
+        android:layout_below="@+id/etUnits"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:hint="@string/end_date"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_below="@+id/etEndDate"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="false"
+        android:layout_marginTop="54dp"
+        android:text="@string/addButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Add Medicine"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/etMedName"
+        android:layout_marginBottom="24dp"
+        android:text="Cancel"
+        android:textSize="18sp" />
+
+</RelativeLayout>

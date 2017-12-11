@@ -2,6 +2,7 @@ package com.cornez.todotodayii;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -9,19 +10,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 import java.util.List;
+
+//public class MainActivity extends Activity {
 public class MainActivity extends Activity {
 
     protected DBHelper mDBHelper;
     private List<ToDo_Item> list;
     private MyAdapter adapt;
     private EditText myTask;
+
+    private Button btnAddMed;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +51,11 @@ public class MainActivity extends Activity {
         */
     }
 
+
+
+
+
+
     //
     @Override
     protected void onResume(){
@@ -57,7 +70,7 @@ public class MainActivity extends Activity {
     public void addTaskNow(View view) {
         String s = myTask.getText().toString();
         if (s.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "A Medication must have a name.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
         } else {
 
             //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
@@ -70,11 +83,6 @@ public class MainActivity extends Activity {
             // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
             adapt.add(task);
             adapt.notifyDataSetChanged();
-
-            //SEND USER TOAST MESSAGE
-            Toast.makeText(getApplicationContext(), "Medication Added", Toast.LENGTH_SHORT).show();
-
-
         }
     }
 
@@ -90,6 +98,22 @@ public class MainActivity extends Activity {
         adapt.notifyDataSetChanged();
     }
 
+
+
+    // BUTTON CLICK EVENT FOR ADD_MEDICATION
+    public void addMedicationScreen(View view) {
+        Intent addMedScreenIntent = new Intent(this, add_medication.class);
+        startActivity(addMedScreenIntent);
+
+    }
+
+
+
+
+
+
+
+
     //******************* ADAPTER ******************************
     private class MyAdapter extends ArrayAdapter<ToDo_Item> {
         Context context;
@@ -101,7 +125,7 @@ public class MainActivity extends Activity {
             context = c;
         }
 
-    //******************* TODO TASK ITEM VIEW ******************************
+        //******************* TODO TASK ITEM VIEW ******************************
         /**
          * THIS METHOD DEFINES THE TODO ITEM THAT WILL BE PLACED
          * INSIDE THE LIST VIEW.
