@@ -22,6 +22,12 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_TASK_ID = "_id";
     private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_IS_DONE = "is_done";
+    //frequency of pill
+    private static final String KEY_FREQUENCY = "frequency";
+    //number of times per day
+    private static final String KEY_FREQUENCY_NUM = "frequency_num";
+
+
 
     private int taskCount;
 
@@ -36,7 +42,8 @@ public class DBHelper extends SQLiteOpenHelper {
         String table = "CREATE TABLE " + DATABASE_TABLE + "("
                 + KEY_TASK_ID +
                 " INTEGER PRIMARY KEY AUTOINCREMENT, " + KEY_DESCRIPTION + " TEXT, "
-                + KEY_IS_DONE + " INTEGER" + ")";
+                + KEY_IS_DONE + " INTEGER" + KEY_FREQUENCY + " TEXT, "
+                + KEY_FREQUENCY_NUM + " INTEGER, "   + " + )";
 
         db.execSQL(table);
     }
