@@ -90,6 +90,7 @@ public class MainActivity extends Activity {
     public void clearTasks(View view) {
         mDBHelper.clearAll(list);
         adapt.notifyDataSetChanged();
+        //
     }
 
     //BUTTON CLICK EVENT FOR DELETING THE FINISHED TODO TASKS
