@@ -8,6 +8,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -105,25 +106,31 @@ public class MainActivity extends AppCompatActivity {
         listTask.setAdapter(adapt);
     }
 
-    //BUTTON CLICK EVENT FOR ADDING A TODO TASK
-    public void addTaskNow(View view) {
-        String s = myTask.getText().toString();
-        if (s.isEmpty()) {
-            Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
-        } else {
 
-            //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
-            ToDo_Item task = new ToDo_Item(s, 0);
-            mDBHelper.addToDoItem(task);
+        //BUTTON CLICK EVENT FOR ADDING A TODO TASK
+        public void Dotodo (View view){
+            Log.v("Button 1", "Was clicked" );
 
-            // CLEAR OUT THE TASK EDITVIEW
-            myTask.setText("");
+            String s = myTask.getText().toString();
+            if (s.isEmpty()) {
+                Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
+            } else {
 
-            // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
-            adapt.add(task);
-            adapt.notifyDataSetChanged();
+                //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
+                ToDo_Item task = new ToDo_Item(s, 0);
+                mDBHelper.addToDoItem(task);
+
+                // CLEAR OUT THE TASK EDITVIEW
+                myTask.setText("");
+
+                // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
+                adapt.add(task);
+                adapt.notifyDataSetChanged();
+            }
         }
-    }
+
+
+
 
     //BUTTON CLICK EVENT FOR DELETING ALL TODO TASKS
     public void clearTasks(View view) {
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(addMedScreenIntent);
 
     }
+
 
 
     //******************* ADAPTER ******************************

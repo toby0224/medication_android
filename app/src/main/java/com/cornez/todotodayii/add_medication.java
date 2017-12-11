@@ -1,6 +1,7 @@
 package com.cornez.todotodayii;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
@@ -9,10 +10,11 @@ import android.widget.EditText;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-public class add_medication extends Fragment {
+public class add_medication extends Fragment  {
 
 
-    private Button btnAdd;
+
+        private Button btnAdd;
     private EditText etMedName;
     private EditText etDosage;
     private EditText etUnits;
@@ -33,8 +35,13 @@ public class add_medication extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_add_medication, container, false);
+        //return inflater.inflate(R.layout.fragment_add_medication, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
+        return v;
+
     }
+
+
 }
 
 
