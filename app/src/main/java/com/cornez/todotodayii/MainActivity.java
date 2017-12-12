@@ -79,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
-
-
-
         /*
         list = mDBHelper.getAllTasks();
         adapt = new MyAdapter(this, R.layout.todo_item_fragment, list);

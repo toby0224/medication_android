@@ -43,9 +43,18 @@ public class add_medication extends Fragment {
         super.onCreate(savedInstanceState);
         // myTask = (EditText)rootView.findViewById(R.id.etMedName);
 
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState)
+    {
+
+        View RootView = inflater.inflate(R.layout.fragment_add_medication, container, false);
+
         // TASK 2: ESTABLISH REFERENCES TO THE UI
         //      ELEMENTS LOCATED ON THE LAYOUT
-        myTask = (EditText) getView().findViewById(R.id.etMedName);
+        myTask = (EditText) RootView.findViewById(R.id.etMedName);
 
         // TASK 3: SET UP THE DATABASE
         mDBHelper = new DBHelper(getActivity());
@@ -56,6 +65,7 @@ public class add_medication extends Fragment {
         listTask.setAdapter(adapt);
         */
 
+        return RootView;
     }
 
     //BUTTON CLICK EVENT FOR DELETING ALL TODO TASKS
@@ -145,16 +155,7 @@ public class add_medication extends Fragment {
     }
 
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
 
-        View RootView = inflater.inflate(R.layout.fragment_add_medication, container, false);
-
-
-        return RootView;
-    }
 
 }
 
