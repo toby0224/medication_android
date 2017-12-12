@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected DBHelper mDBHelper;
     private List<ToDo_Item> list;
-    private com.cornez.todotodayii.MainActivity.MyAdapter adapt;
+    private MyAdapter adapt;
     private EditText myTask;
 
     private Button btnAddMed;
@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        myTask = (EditText) findViewById(R.id.etMedName);
+
+        // SET UP THE DATABASE
+        mDBHelper = new DBHelper(this);
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.navigation);
 
@@ -83,10 +89,7 @@ public class MainActivity extends AppCompatActivity {
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
 
-        myTask = (EditText) findViewById(R.id.etMedName);
 
-        // SET UP THE DATABASE
-        mDBHelper = new DBHelper(this);
 
         /*
         list = mDBHelper.getAllTasks();
@@ -107,28 +110,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-        //BUTTON CLICK EVENT FOR ADDING A TODO TASK
-        public void Dotodo (View view){
-            Log.v("Button 1", "Was clicked" );
+    //BUTTON CLICK EVENT FOR ADDING A TODO TASK
+    public void addTaskNow() {
+        Log.v("Button 2", "Was clicked" );
 
-            String s = myTask.getText().toString();
-            if (s.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
-            } else {
+        String s = myTask.getText().toString();
+        if (s.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
+        } else {
 
-                //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
-                ToDo_Item task = new ToDo_Item(s, 0);
-                mDBHelper.addToDoItem(task);
+            //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
+            ToDo_Item task = new ToDo_Item(s, 0);
+            mDBHelper.addToDoItem(task);
 
-                // CLEAR OUT THE TASK EDITVIEW
-                myTask.setText("");
+            // CLEAR OUT THE TASK EDITVIEW
+            myTask.setText("");
 
-                // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
-                adapt.add(task);
-                adapt.notifyDataSetChanged();
-            }
+            // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
+            adapt.add(task);
+            adapt.notifyDataSetChanged();
         }
-
+    }
 
 
 

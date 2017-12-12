@@ -81,7 +81,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerInParent="false"
         android:layout_marginTop="54dp"
-        android:onClick="Dotodo"
         android:text="@string/addButton" />
 
     <TextView
