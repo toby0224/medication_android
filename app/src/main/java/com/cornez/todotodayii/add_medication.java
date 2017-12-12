@@ -46,9 +46,9 @@ public class add_medication extends Fragment implements View.OnClickListener{
 
         View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
 
-        View v2 = inflater.inflate(R.layout.todo_item_fragment, container, false);
+        //View v2 = inflater.inflate(R.layout.todo_item_fragment, container, false);
 
-        View v3 = inflater.inflate(R.layout.fragment_home, container, false);
+        //View v3 = inflater.inflate(R.layout.fragment_home, container, false);
 
 
         Button b = (Button) v.findViewById(R.id.btnAdd);
@@ -74,7 +74,7 @@ public class add_medication extends Fragment implements View.OnClickListener{
 
         list = mDBHelper.getAllTasks();
         adapt = new MyAdapter (this, R.layout.todo_item_fragment, list);
-        ListView listTask = (ListView) v3.findViewById(R.id.listView1);
+        ListView listTask = (ListView) findViewById(R.id.listView1);
         listTask.setAdapter(adapt);
 
         return v;
