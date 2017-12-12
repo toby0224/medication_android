@@ -73,7 +73,7 @@ public class add_medication extends Fragment implements View.OnClickListener{
       //  listTask.setAdapter(adapt);
 
         list = mDBHelper.getAllTasks();
-        adapt = new MyAdapter(this, R.layout.todo_item_fragment, list);
+        adapt = new MyAdapter (this, R.layout.todo_item_fragment, list);
         ListView listTask = (ListView) v3.findViewById(R.id.listView1);
         listTask.setAdapter(adapt);
 
