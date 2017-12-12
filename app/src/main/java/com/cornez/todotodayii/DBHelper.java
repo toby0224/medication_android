@@ -25,9 +25,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private int taskCount;
 
-    public DBHelper (add_medication context){
+    public DBHelper (Context context){
         super (context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
 
 
     @Override

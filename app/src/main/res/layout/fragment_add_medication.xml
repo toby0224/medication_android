@@ -76,11 +76,12 @@
         android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_below="@+id/etEndDate"
-        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etStartDate"
         android:layout_centerInParent="false"
-        android:layout_marginTop="54dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="53dp"
         android:text="@string/addButton" />
 
     <TextView
