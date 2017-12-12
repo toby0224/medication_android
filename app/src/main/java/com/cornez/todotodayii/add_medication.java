@@ -18,43 +18,45 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class add_medication extends Fragment {
+public class add_medication extends Fragment implements View.OnClickListener{
 
     protected DBHelper mDBHelper;
     private List<ToDo_Item> list;
-    private MyAdapter adapt;
+    public MyAdapter adapt;
     private EditText myTask;
 
-    private Button btnAdd;
-    private EditText etMedName;
-    private EditText etDosage;
-    private EditText etUnits;
-    private EditText etFrequency;
-    private EditText etStartDate;
-    private EditText etEndDate;
+    Button btnAdd;
+    EditText etMedName;
+    EditText etDosage;
+    EditText etUnits;
+    EditText etFrequency;
+    EditText etStartDate;
+    EditText etEndDate;
 
     public static add_medication newInstance() {
         add_medication fragment = new add_medication();
         return fragment;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // myTask = (EditText)rootView.findViewById(R.id.etMedName);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState)
     {
 
-        View RootView = inflater.inflate(R.layout.fragment_add_medication, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
+
+        View v2 = inflater.inflate(R.layout.todo_item_fragment, container, false);
+
+        View v3 = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        Button b = (Button) v.findViewById(R.id.btnAdd);
+        b.setOnClickListener(this);
 
         // TASK 2: ESTABLISH REFERENCES TO THE UI
         //      ELEMENTS LOCATED ON THE LAYOUT
-        myTask = (EditText) RootView.findViewById(R.id.etMedName);
+        myTask = (EditText) v.findViewById(R.id.etMedName);
 
         // TASK 3: SET UP THE DATABASE
         mDBHelper = new DBHelper(getActivity());
@@ -65,8 +67,19 @@ public class add_medication extends Fragment {
         listTask.setAdapter(adapt);
         */
 
-        return RootView;
+      //  list = mDBHelper.getAllTasks();
+      //  adapt = new MyAdapter(getActivity(), R.layout.todo_item_fragment, list);
+      //  ListView listTask = (ListView) getActivity().findViewById(R.id.listView1);
+      //  listTask.setAdapter(adapt);
+
+        list = mDBHelper.getAllTasks();
+        adapt = new MyAdapter(this, R.layout.todo_item_fragment, list);
+        ListView listTask = (ListView) v3.findViewById(R.id.listView1);
+        listTask.setAdapter(adapt);
+
+        return v;
     }
+
 
     //BUTTON CLICK EVENT FOR DELETING ALL TODO TASKS
     public void clearTasks(View view) {
@@ -81,7 +94,9 @@ public class add_medication extends Fragment {
     }
 
     //BUTTON CLICK EVENT FOR ADDING A TODO TASK
-    public void addTaskNow(View view) {
+    //addTaskNow
+    @Override
+    public void onClick(View v) {
         String s = myTask.getText().toString();
         if (s.isEmpty()) {
             Toast.makeText(getActivity().getApplicationContext(), "A TODO task must be entered.", Toast.LENGTH_SHORT).show();
@@ -91,14 +106,21 @@ public class add_medication extends Fragment {
             ToDo_Item task = new ToDo_Item(s, 0);
             mDBHelper.addToDoItem(task);
 
+
+
             // CLEAR OUT THE TASK EDITVIEW
             myTask.setText("");
 
             // ADD THE TASK AND SET A NOTIFICATION OF CHANGES
             adapt.add(task);
             adapt.notifyDataSetChanged();
+
+
         }
     }
+
+
+
 
     //******************* ADAPTER ******************************
     private class MyAdapter extends ArrayAdapter<ToDo_Item> {
@@ -153,6 +175,8 @@ public class add_medication extends Fragment {
         }
 
     }
+
+
 
 
 

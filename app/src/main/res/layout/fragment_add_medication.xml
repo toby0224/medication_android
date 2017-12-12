@@ -81,7 +81,6 @@
         android:layout_below="@+id/etStartDate"
         android:layout_centerInParent="false"
         android:layout_marginTop="53dp"
-        android:onClick="addTaskNow"
         android:text="@string/addButton" />
 
     <TextView
