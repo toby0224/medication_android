@@ -26,11 +26,6 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
-    private Button btnAddMed;
-    private TextView mTextMessage;
-
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -78,17 +73,43 @@ public class MainActivity extends AppCompatActivity {
 
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
+    }
 
-        /*
-        list = mDBHelper.getAllTasks();
-        adapt = new MyAdapter(this, R.layout.todo_item_fragment, list);
-        ListView listTask = (ListView) findViewById(R.id.listView1);
-        listTask.setAdapter(adapt);
-        */
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
+
+
+
+    // BUTTON CLICK EVENT FOR ADD_MEDICATION
+    public void addMedicationScreen(View view) {
+        Intent addMedScreenIntent = new Intent(this, add_medication.class);
+        startActivity(addMedScreenIntent);
 
     }
 
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }
