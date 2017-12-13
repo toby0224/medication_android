@@ -5,17 +5,6 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/etFrequency_weekly"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_alignBaseline="@+id/etFrequency_weekly"
-        android:layout_alignBottom="@+id/etFrequency_weekly"
-        android:layout_toEndOf="@+id/etTime"
-        android:ems="10"
-        android:hint="Daily Frequency"
-        android:inputType="textPersonName" />
-
-    <EditText
             android:id="@+id/etMedName"
             android:layout_width="370dp"
             android:layout_height="40dp"
@@ -128,8 +117,15 @@
             android:layout_alignStart="@+id/etMedName"
             android:text="CLEAR" />
 
-
-
+    <EditText
+        android:id="@+id/etFrequency_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/etFrequency_weekly"
+        android:layout_toEndOf="@+id/etTime"
+        android:ems="10"
+        android:hint="Day Frequency"
+        android:inputType="textPersonName" />
 
 
 </RelativeLayout>

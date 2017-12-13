@@ -27,6 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String KEY_UNITS = "units";
     private static final String KEY_START_DATE = "start_date";
     private static final String KEY_END_DATE = "end_date";
+    private static final String KEY_TIME = "time";
+
 
 
 
@@ -51,6 +53,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_DOSAGE + " STRING"
                 + KEY_UNITS + " STRING"
                 + KEY_START_DATE + " STRING"
+                + KEY_END_DATE + " STRING"
+                + KEY_TIME + " STRING"
                 + KEY_UNITS + " STRING" + ")";
 
         db.execSQL(table);
