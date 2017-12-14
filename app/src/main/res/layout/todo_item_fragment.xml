@@ -20,7 +20,6 @@
         android:layout_height="50dip"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:onClick="GetInfo"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/getinfo" />
 

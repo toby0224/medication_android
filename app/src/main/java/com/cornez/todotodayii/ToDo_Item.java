@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,6 +25,7 @@ public class ToDo_Item extends Fragment implements View.OnClickListener{
     private List<ToDo_Item> list;
     private MyAdapter adapt;
     Button btn_rem;
+    ImageButton btnGetInfo;
 
 
     public static ToDo_Item newInstance() {
@@ -51,15 +53,22 @@ public class ToDo_Item extends Fragment implements View.OnClickListener{
         btn_rem = v.findViewById(R.id.btn_rem);
         btn_rem.setOnClickListener(this);
 
+       // btnGetInfo = v.findViewById(R.id.btnGetInfo);
+       // btnGetInfo.setOnClickListener(this);
+
+
         return v;
     }
+
 
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_rem)
             deleteDone();
-    }
 
+       // if (v.getId() == R.id.btnGetInfo)
+          //  GetInfo();
+    }
 
     @Override
     public void onResume() {
@@ -81,7 +90,7 @@ public class ToDo_Item extends Fragment implements View.OnClickListener{
     }
 
     //BUTTON CLICK EVENT FOR GET INFO
-    public void GetInfo(View view) {
+    public void GetInfo() {
 
 
 
