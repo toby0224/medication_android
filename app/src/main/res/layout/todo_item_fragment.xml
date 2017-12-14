@@ -10,12 +10,19 @@
         android:id="@+id/chkStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/yellow"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:textSize="30sp" />
+
+    <ImageButton
+        android:id="@+id/btnGetInfo"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:onClick="GetInfo"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/getinfo" />
 
 
 </RelativeLayout>

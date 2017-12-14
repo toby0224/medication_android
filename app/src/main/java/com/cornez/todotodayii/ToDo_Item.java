@@ -4,12 +4,14 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
 
@@ -17,10 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ToDo_Item extends Fragment {
+public class ToDo_Item extends Fragment implements View.OnClickListener{
     protected DBHelper mDBHelper;
     private List<ToDo_Item> list;
     private MyAdapter adapt;
+    Button btn_rem;
+
 
     public static ToDo_Item newInstance() {
         ToDo_Item fragment = new ToDo_Item();
@@ -35,17 +39,27 @@ public class ToDo_Item extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root =  inflater.inflate(R.layout.fragment_home, container, false);
+        View v =  inflater.inflate(R.layout.fragment_home, container, false);
 
         // SET UP THE DATABASE
         mDBHelper = new DBHelper(getActivity());
         list = mDBHelper.getAllTasks();
         adapt = new MyAdapter(getActivity(), R.layout.todo_item_fragment, list);
-        ListView listView = root.findViewById(R.id.listView1);
+        ListView listView = v.findViewById(R.id.listView1);
         listView.setAdapter(adapt);
 
-        return root;
+        btn_rem = v.findViewById(R.id.btn_rem);
+        btn_rem.setOnClickListener(this);
+
+        return v;
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_rem)
+            deleteDone();
+    }
+
 
     @Override
     public void onResume() {
@@ -61,9 +75,18 @@ public class ToDo_Item extends Fragment {
     }
 
     //BUTTON CLICK EVENT FOR DELETING THE FINISHED TODO TASKS
-    public void deleteDone(View view) {
+    public void deleteDone() {
         mDBHelper.deleteSelected(list);
         adapt.notifyDataSetChanged();
+    }
+
+    //BUTTON CLICK EVENT FOR GET INFO
+    public void GetInfo(View view) {
+
+
+
+        String s_test2 = "";
+        Log.v("SQL output",s_test2);
     }
 
 
