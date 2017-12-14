@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                 selectedFragment = add_medication.newInstance();
                                 break;
                             case R.id.navigation_about:
-                                selectedFragment = add_medication.newInstance();
+                                selectedFragment = AboutFragment.newInstance();
                                 break;
                         }
                         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
