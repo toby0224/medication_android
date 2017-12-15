@@ -26,6 +26,9 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -82,12 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    // BUTTON CLICK EVENT FOR ADD_MEDICATION
-    public void addMedicationScreen(View view) {
-        Intent addMedScreenIntent = new Intent(this, add_medication.class);
-        startActivity(addMedScreenIntent);
 
-    }
 
 
 

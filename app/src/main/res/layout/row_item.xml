@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tx_med_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/chkStatus"
+        android:text="Asprin"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tx_dose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_med_name"
+        android:layout_toEndOf="@+id/chkStatus"
+        android:text="325mg"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+
+    <CheckBox
+        android:id="@+id/chkStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tx_frequency_day"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tx_units"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tx_med_name"
+        android:layout_marginStart="33dp"
+        android:layout_toEndOf="@+id/tx_dose"
+        android:text="Pills"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/tx_frequency_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chkStatus"
+        android:layout_marginEnd="23dp"
+        android:layout_toStartOf="@+id/item_info"
+        android:text="3 Times A Week"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/tx_frequency_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tx_frequency_week"
+        android:layout_alignTop="@+id/tx_units"
+        android:text="Once A Day"
+        android:textSize="10sp" />
+
+    <ImageView
+        android:id="@+id/item_info"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/darker_gray"
+        android:src="@android:drawable/ic_dialog_info" />
+
+
+</RelativeLayout>
