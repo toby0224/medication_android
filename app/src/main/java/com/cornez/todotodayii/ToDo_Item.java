@@ -22,6 +22,9 @@ import java.util.List;
 
 public class ToDo_Item extends Fragment{
 
+    protected DBHelper mDBHelper;
+    private List<ToDo_Item> list;
+   // private MyAdapter adapt;
 
 
     public static ToDo_Item newInstance() {
@@ -40,15 +43,13 @@ public class ToDo_Item extends Fragment{
         View v =  inflater.inflate(R.layout.row_item, container, false);
 
         // SET UP THE DATABASE
-       // adapt = new MyAdapter(getActivity(), R.layout.fragment_home, list);
-       // ListView listView = v.findViewById(R.id.listView1);
-      //  listView.setAdapter(adapt);
+        mDBHelper = new DBHelper(getActivity());
+        list = mDBHelper.getAllTasks();
 
- //       btn_rem = v.findViewById(R.id.btn_rem);
-//        btn_rem.setOnClickListener(this);
+     //   adapt = new MyAdapter(getActivity(), R.layout.row_item, list);
+     //   ListView listView = v.findViewById(R.id.list);
+     //   listView.setAdapter(adapt);
 
-       // btnGetInfo = v.findViewById(R.id.btnGetInfo);
-       // btnGetInfo.setOnClickListener(this);
 
 
         return v;
@@ -72,11 +73,62 @@ public class ToDo_Item extends Fragment{
     }
 
 
+/*
 
+    //******************* ADAPTER ******************************
+    private class MyAdapter extends ArrayAdapter<ToDo_Item> {
+        Context context;
+        List<ToDo_Item> taskList = new ArrayList<>();
 
+        MyAdapter(Context c, int rId, List<ToDo_Item> objects) {
+            super(c, rId, objects);
+            taskList = objects;
+            context = c;
+        }
 
+        // TODO TASK ITEM VIEW
 
+        //
+         //THIS METHOD DEFINES THE TODO ITEM THAT WILL BE PLACED
+         //INSIDE THE LIST VIEW.
+         //<p>
+         // THE CHECKBOX STATE IS THE IS_DONE STATUS OF THE TODO TASK
+        // AND THE CHECKBOX TEXT IS THE TODO_ITEM TASK DESCRIPTION.
+         //
 
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            CheckBox isDoneChBx = null;
+            if (convertView == null) {
+                LayoutInflater inflater = (LayoutInflater) context
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = inflater.inflate(R.layout.row_item, parent, false);
+
+                isDoneChBx = (CheckBox) convertView.findViewById(R.id.chkStatus);
+                convertView.setTag(isDoneChBx);
+
+                isDoneChBx.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        CheckBox cb = (CheckBox) view;
+                        ToDo_Item changeTask = (ToDo_Item) cb.getTag();
+                        changeTask.setIs_done(cb.isChecked() == true ? 1 : 0);
+                        mDBHelper.updateTask(changeTask);
+                    }
+                });
+            } else {
+                isDoneChBx = (CheckBox) convertView.getTag();
+            }
+            ToDo_Item current = taskList.get(position);
+            isDoneChBx.setText(current.getDescription());
+            isDoneChBx.setChecked(current.getIs_done() == 1 ? true : false);
+            isDoneChBx.setTag(current);
+            return convertView;
+        }
+
+    }
+
+*/
 
 
 
@@ -205,8 +257,8 @@ public class ToDo_Item extends Fragment{
     public String getDescription () {
         return description;
     }
-    public void setDescription (String desc) {
-        description = desc;
+    public void setDescription (String description3) {
+        description = description3;
     }
 
 

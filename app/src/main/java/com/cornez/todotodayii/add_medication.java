@@ -34,7 +34,7 @@ public class add_medication extends Fragment implements View.OnClickListener {
     protected DBHelper mDBHelper;
 
 
-    ArrayList<ToDo_Item> dataModels;
+    ArrayList<ToDo_Item> ToDo_Items;
     ListView listView;
 
 
@@ -64,7 +64,7 @@ public class add_medication extends Fragment implements View.OnClickListener {
         View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
 
 
-        dataModels= new ArrayList<>();
+        ToDo_Items= new ArrayList<>();
 
 
        // adapter= new CustomAdapter(dataModels,getActivity().getApplicationContext());
@@ -119,7 +119,7 @@ public class add_medication extends Fragment implements View.OnClickListener {
             //BUILD A NEW TASK ITEM AND ADD IT TO THE DATABASE
            // ToDo_Item task = new ToDo_Item(s,0);
 
-            dataModels.add(new ToDo_Item(s1,"",0,s2,s3,s4,s5,s6,s7,s8));
+            ToDo_Items.add(new ToDo_Item(s1,"",0,s2,s3,s4,s5,s6,s7,s8));
 
 //            ToDo_Item task2 = new ToDo_Item(s2, 0);
 
@@ -144,7 +144,7 @@ public class add_medication extends Fragment implements View.OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 
-                ToDo_Item dataModel= dataModels.get(position);
+                ToDo_Item dataModel= ToDo_Items.get(position);
 
                 Snackbar.make(v, dataModel.get_med_id()+"\n"+dataModel.getDay()+" API: "+dataModel.get_med_id(), Snackbar.LENGTH_LONG)
                         .setAction("No action", null).show();
