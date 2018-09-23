@@ -24,7 +24,7 @@
         android:layout_marginTop="23dp"
         android:layout_toStartOf="@+id/etUnits"
         android:ems="10"
-        android:hint="Weekly Frequency"
+        android:hint="@string/frequency"
         android:inputType="textPersonName" />
 
         <EditText
@@ -85,37 +85,37 @@
             android:layout_centerInParent="false"
             android:text="@string/addButton" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="70dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Add Medicine"
-            android:textSize="22sp"
-            android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/add_medicine"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/etTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/etStartDate"
-            android:layout_below="@+id/etStartDate"
-            android:layout_marginTop="23dp"
-            android:ems="10"
-            android:hint="Enter Time"
-            android:inputType="time" />
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etStartDate"
+        android:layout_below="@+id/etStartDate"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="@string/enter_Time"
+        android:inputType="time" />
 
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/textView3"
-            android:layout_alignBottom="@+id/textView3"
-            android:layout_alignStart="@+id/etMedName"
-            android:text="CLEAR" />
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/etMedName"
+        android:text="@string/clear" />
 
     <EditText
         android:id="@+id/etFrequency_day"
@@ -124,7 +124,7 @@
         android:layout_alignBottom="@+id/etFrequency_weekly"
         android:layout_toEndOf="@+id/etTime"
         android:ems="10"
-        android:hint="Day Frequency"
+        android:hint="@string/dayFrequency"
         android:inputType="textPersonName" />
 
 

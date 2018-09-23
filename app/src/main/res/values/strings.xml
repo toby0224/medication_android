@@ -10,13 +10,17 @@
     <string name="delete">Clear all TODOs</string>
     <string name="desc">Description</string>
 
+    <string name="addMedicine">Add Medicine</string>
+    <string name="clear">CLEAR</string>
     <string name="medication_name">Medication Name</string>
     <string name="units">Units</string>
     <string name="dosage">Dosage</string>
     <string name="start_date">Start Date mm/dd/yyyy </string>
     <string name="end_date">End Date mm/dd/yyyy </string>
+    <string name="enter_Time">Enter Time</string>
     <string name="add_medicine">Add Medicine</string>
-    <string name="frequency">Frequency</string>
+    <string name="frequency">Weekly Frequency</string>
+    <string name="dayFrequency">Day Frequency</string>
     <string name="addButton">ADD</string>
 
     <string name="delete_finished_items">Delete finished items</string>
@@ -26,6 +30,7 @@
     <string name="title_home">Home</string>
     <string name="title_add_med">Add Medication</string>
     <string name="title_about">About</string>
+
     <string name="remove_checked_items">Remove Checked Items</string>
     <string name="lupusAbout"> What is Lupus? \nLupus is a serious disease that can affect
         anyone. It is most often diagnosed in young women, between the ages of 15 and 44. While the
